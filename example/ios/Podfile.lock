@@ -2,20 +2,26 @@ PODS:
   - file_viewer (0.0.1):
     - Flutter
   - Flutter (1.0.0)
+  - path_provider_ios (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - file_viewer (from `.symlinks/plugins/file_viewer/ios`)
   - Flutter (from `Flutter`)
+  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
 
 EXTERNAL SOURCES:
   file_viewer:
     :path: ".symlinks/plugins/file_viewer/ios"
   Flutter:
     :path: Flutter
+  path_provider_ios:
+    :path: ".symlinks/plugins/path_provider_ios/ios"
 
 SPEC CHECKSUMS:
   file_viewer: d9b3309449b59327c23558913f3be276a3b2d806
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  path_provider: ^2.0.9
+
   file_viewer:
     path: ../
 

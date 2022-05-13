@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:file_viewer/file_viewer.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 class LocalFileViewer extends StatefulWidget {
@@ -30,7 +32,11 @@ class _LocalFileViewerState extends State<LocalFileViewer> {
   }
 
   Widget _createIosView() {
-    return const Text('iOS View');
+    return UiKitView(
+      viewType: view_name,
+      creationParams: <String, String>{ 'filePath': widget.filePath },
+      creationParamsCodec: const StandardMessageCodec(),
+    );
   }
 
   Widget _createAndroidView() {
