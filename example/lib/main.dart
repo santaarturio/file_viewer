@@ -30,13 +30,13 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(title: const Text('File Viewer')),
         body: _filePath == null 
-          ? Center(child: _whileLoading())
+          ? _whileLoading()
           : LocalFileViewer(filePath: _filePath!, whileLoading: _whileLoading())
       ),
     );
   }
 
-  Widget _whileLoading() => const CircularProgressIndicator(value: 1.0);
+  Widget _whileLoading() => const Center(child: CircularProgressIndicator());
 
   void _loadTestFile() async {
     const assetType = 'docx';

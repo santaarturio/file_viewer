@@ -17,13 +17,15 @@ class FileViewerPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "file_viewer")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "file_viewer.channel.name")
     channel.setMethodCallHandler(this)
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
+    } else if (call.method == "getLoadingState") { 
+      result.success(false)
     } else {
       result.notImplemented()
     }

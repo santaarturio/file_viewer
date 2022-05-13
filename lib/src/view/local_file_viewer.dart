@@ -26,9 +26,26 @@ class _LocalFileViewerState extends State<LocalFileViewer> {
 
   @override
   Widget build(BuildContext context) {
-    return Platform.isIOS
-      ? _createIosView()
-      : _createAndroidView();
+    return FutureBuilder<bool>(
+      future: isLoading(),
+      initialData: true,
+      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+        bool? isLoading = snapshot.data;
+
+        return Stack(
+          children: [
+            Platform.isIOS
+              ? _createIosView()
+              : _createAndroidView(),
+            if (isLoading ?? false) widget.whileLoading ?? const Text('loading')
+          ]
+        );
+      }
+    );
+  }
+
+  Future<bool> isLoading() async {
+    return await FileViewer.getLoadingState() ?? false;
   }
 
   Widget _createIosView() {
@@ -40,6 +57,6 @@ class _LocalFileViewerState extends State<LocalFileViewer> {
   }
 
   Widget _createAndroidView() {
-    return const Text('Android View');
+    return const Center(child: Text('Android View'));
   }
 }
