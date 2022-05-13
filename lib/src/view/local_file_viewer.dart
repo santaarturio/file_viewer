@@ -50,7 +50,7 @@ class _LocalFileViewerState extends State<LocalFileViewer> {
 
   Widget _createIosView() {
     return UiKitView(
-      viewType: view_name,
+      viewType: viewName,
       creationParams: <String, String>{ 'filePath': widget.filePath },
       creationParamsCodec: const StandardMessageCodec(),
     );
