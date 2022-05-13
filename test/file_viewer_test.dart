@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:file_viewer/file_viewer.dart';
+import 'package:file_viewer/src/file_viewer.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('file_viewer');

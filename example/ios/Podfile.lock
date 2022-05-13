@@ -1,0 +1,22 @@
+PODS:
+  - file_viewer (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - file_viewer (from `.symlinks/plugins/file_viewer/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  file_viewer:
+    :path: ".symlinks/plugins/file_viewer/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  file_viewer: d9b3309449b59327c23558913f3be276a3b2d806
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.11.2
